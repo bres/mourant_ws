@@ -1,0 +1,1001 @@
+/*-----------------------------------------------------------------------*/
+/* root */
+/*-----------------------------------------------------------------------*/
+
+:root {
+    --blue-color: #106ce6;
+    --p-color: #7e7e7e;
+    --h2-color: #3f3f3f;
+    --h3-color: #3f3f3f;
+    --h4-color: var(--blue-color);
+    --button-hover-color: #0f65d6;
+    --line-color: #1276f8;
+    --quote_line-color: #e0e0e0;
+    --gray-background-color: #f8f8f8;
+    --white-color: #fff;
+
+
+    --primary: #106ce6;
+    --greyLight: #106ce6;
+    --greyLight-2: #106ce6;
+    --greyDark: #106ce6;
+  
+    /*-----------------------------------------------------------------------*/
+    /* Core Padding*/
+    /*-----------------------------------------------------------------------*/
+    --widthA: 1rem;
+    --widthB: calc(100% - 1400px);
+    --widthC: calc(var(--widthB) / 2.08);
+    --widthD: calc(3% + var(--widthC));
+  }
+  
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
+  
+  /*-----------------------------------------------------------------------*/
+  /* Core Styles */
+  /*-----------------------------------------------------------------------*/
+  body {
+    font-family: "Cabin", sans-serif;
+    background-color: var(--gray-background-color);
+    font-size: 1.6rem;
+    line-height: 1.7;
+    text-align: center;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Roboto Condensed", sans-serif;
+    line-height: 1.3;
+    letter-spacing: 0.08rem;
+  }
+  
+  h2 {
+    font-size: 3.2rem;
+    margin: 0;
+    padding: 0 0 3.5rem 0;
+    color: var(--h2-color);
+  }
+  
+  h3 {
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 0 0.5rem 0;
+    color: var(--h3-color);
+  }
+  
+  h4 {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 3rem 0 0 0;
+    color: var(--h4-color);
+  }
+  
+  p {
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+    color: var(--p-color);
+  }
+  
+  ul i {
+    color: var(--blue-color);
+  }
+  
+  .container {
+    position: relative;
+    margin-top: 80px;
+  }
+  
+  img {
+    padding: 0;
+  }
+  
+  /*-----------------------------------------------------------------------*/
+  /* SECTION-NAV / NAVBAR */
+  /*-----------------------------------------------------------------------*/
+  nav {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 80px;
+    background-color: var(--white-color);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    padding: 0 3vw;
+  }
+  
+  nav .logo {
+    float: left;
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--blue-color);
+    font-family: "Roboto Condensed", sans-serif;
+  }
+  
+  
+  nav .logo a {
+    text-decoration: none;
+    color: var(--blue-color)
+  }
+  
+  nav .links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  nav .links li {
+    list-style: none;
+  }
+  
+  nav .links a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--p-color);
+    text-decoration: none;
+  }
+  
+  #nav-toggle {
+    position: absolute;
+    top: -80px;
+  }
+  
+  nav .icon-burger {
+    display: none;
+    position: absolute;
+    right: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  nav .icon-burger .line {
+    width: 30px;
+    height: 4px;
+    background-color: var(--blue-color);
+    margin: 5px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  @media screen and (max-width: 991px) {
+    nav .logo {
+      float: none;
+      width: auto;
+      justify-content: start;
+    }
+  
+    nav .links {
+      float: none;
+      position: fixed;
+      z-index: 9;
+      left: 0;
+      right: 0;
+      top: 80px;
+      bottom: 100%;
+      width: auto;
+      height: auto;
+      flex-direction: column;
+      justify-content: start;
+      background-color: var(--blue-color);
+      overflow: hidden;
+      box-sizing: border-box;
+      transition: all 0.5s ease-in-out;
+    }
+  
+    nav .links a {
+      font-size: 20px;
+      color: #ffffff;
+    }
+  
+    nav :checked~.links {
+      bottom: 0;
+    }
+  
+    nav .icon-burger {
+      display: block;
+    }
+  
+    nav :checked~.icon-burger .line:nth-child(1) {
+      transform: translateY(9px) rotate(225deg);
+    }
+  
+    nav :checked~.icon-burger .line:nth-child(3) {
+      transform: translateY(-9px) rotate(-225deg);
+    }
+  
+    nav :checked~.icon-burger .line:nth-child(2) {
+      opacity: 0;
+    }
+  }
+  
+  /*------------------------------BUTTONS-----------------------------*/
+  .button-general {
+    background-color: var(--blue-color);
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 4.4rem;
+    width: 140px;
+    padding: 0 1rem;
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    margin-top: 4rem;
+  }
+  
+  .button-general:hover {
+    /* background-color: var(--button-hover-color); */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+  
+  @media (min-width: 768px) {
+    .button-general {
+      font-size: 1.6rem;
+      height: 5rem;
+      justify-content: center;
+      width: 18rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+/*------------------------------ PAGINATION ------------------------------*/
+
+.items-list {
+    max-width: 90vw;
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 3rem;
+    justify-content: center;
+    align-content: center;
+  }
+  @media only screen and (max-width: 600px) {
+    .items-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .item {
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--greyDark);
+    cursor: pointer;
+  }
+  .item span {
+    background: #ffffff;
+    box-shadow: 0 0.8rem 2rem rgba(90, 97, 129, 0.05);
+    border-radius: 0.6rem;
+    padding: 2rem;
+    font-size: 3rem;
+    transition: all 0.3s ease;
+  }
+  .item:hover span {
+    transform: scale(1.2);
+    color: var(--primary);
+  }
+  .item p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: var(--greyLight);
+  }
+  
+  .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    margin: 3rem;
+    border-radius: 0.6rem;
+    background: #ffffff;
+    box-shadow: 0 0.8rem 2rem rgba(90, 97, 129, 0.05);
+  }
+  .page__numbers, .page__btn, .page__dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+  }
+  .page__dots {
+    width: 2.6rem;
+    height: 2.6rem;
+    color: var(--greyLight);
+    cursor: initial;
+  }
+  .page__numbers {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.4rem;
+  }
+  .page__numbers:hover {
+    color: var(--primary);
+  }
+  .page__numbers.active {
+    color: #ffffff;
+    background: var(--primary);
+    font-weight: 600;
+    border: 1px solid var(--primary);
+  }
+  .page__btn {
+    color: var(--greyLight);
+    pointer-events: none;
+  }
+  .page__btn.active {
+    color: var(--greyDark);
+    pointer-events: initial;
+  }
+  .page__btn.active:hover {
+    color: var(--primary);
+  }
+
+  
+/*------------------------------MOBILE VIEW------------------------------*/
+  
+
+/*-----------------------------------------------------------------------*/
+/* MOBILE VIEW - SECTION SHOWCASE */
+/*-----------------------------------------------------------------------*/
+
+#icon-link {
+    display: none;
+  }
+  
+  #showcase {
+    height: 30vh;
+    color: #fff;
+  }
+  
+  /* #showcase .bg-image {
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0.116), rgba(0, 0, 0, 0.2)),
+      url("https://images.unsplash.com/photo-1561728130-afd430af0493?auto=format&fit=crop&q=80&w=2670&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    text-align: left;
+  } */
+
+  #showcase .bg-image {
+    background-position: center;
+    width: 100%;
+    height: 100%;
+  } 
+  #background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    object-position: 50% 60%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  
+  .bg-image {
+    padding: 0 3vw;
+    display: grid;
+    justify-items: start;
+    align-items: center;
+  }
+  
+  .bg-image p {
+    padding: 0;
+  }
+  
+  #showcase .showcase-card {
+    display: none;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  
+  #showcase .showcase-nav {
+    display: flex;
+    align-items: center;
+    color: var(--blue-color);
+    gap: 1.6rem;
+  }
+  
+  #showcase h2 {
+    color: var(--white-color);
+  }
+  
+  #showcase h4 {
+    color: var(--white-color);
+  }
+  
+  .showcase-card p {
+    color: var(--p-color);
+    font-family: sans-serif;
+  }
+  
+  
+
+  
+  /*-----------------------------------------------------------------------*/
+  /* MOBILE VIEW - section-a / OUR PROJECTS */
+  /*-----------------------------------------------------------------------*/
+  
+  /* TODO: */
+  #section-a {
+    padding: 10rem 3vw;
+  }
+  #section-a a{
+    text-decoration: none;
+  }
+
+  .cards {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+    gap: 2rem;
+    list-style-type: none;
+  }
+  
+  .card {
+    border: 0.1rem solid var(--quote_line-color);
+    background-color: #ffffff;
+    padding:1.5rem;
+  }
+  
+  .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+  
+  .card__image {
+    width: 100%;
+    aspect-ratio: 3/1.7;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .card__content {
+    text-align: left;
+    padding:2rem 0 0 0;
+  }
+  
+  #section-a p:nth-child(2) {
+    font-size: 1.6rem;
+    color: var(--p-color);
+  }
+  
+  #section-a p:last-child {
+    margin: 0;
+    padding:3rem 0 0 0;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1;
+  }
+  
+ 
+  /* remove padding from h4 */
+  #section-a h4 {
+    padding: 0 0 0 0;
+  }
+ 
+  
+  
+  /*-----------------------------------------------------------------------*/
+  /* MOBILE VIEW - SECTION-FOOTER */
+  /*-----------------------------------------------------------------------*/
+  
+  .footer-content {
+    background-color: var(--blue-color);
+    color: white;
+    margin: 0;
+    text-align: start;
+    font-size: 1.5rem;
+    font-family: sans-serif;
+    padding: 0 3vw;
+  }
+  
+  .footer-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-content li {
+    padding-bottom: 1.5rem;
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-content p span {
+    color: white;
+    padding-left: 0.8rem;
+  }
+  
+  .footer-content i {
+    font-size: 2.5rem;
+  }
+  
+  .footer-content h3 {
+    color: #ffffff;
+    margin: 0rem;
+    padding: 4rem 0rem 2.4rem 0rem;
+  }
+  
+  .footer-content h2 {
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .design {
+    margin-top: 2rem;
+  }
+  
+  .design p {
+    padding: 3rem 2rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    border-top: solid 1px var(--line-color);
+  }
+  
+  .col-2 i {
+    color: var(--white-color);
+  }
+  
+  .col-3 i {
+    color: var(--white-color);
+  }
+  
+  .col-4 i {
+    color: var(--white-color);
+  }
+  
+  /*------------------------------DESKTOP-576 VIEW---------------------------*/
+  @media (min-width: 576px) {
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 576  - NAV-PADDING*/
+    /*-----------------------------------------------------------------------*/
+  
+    nav {
+      padding: 0 3vw;
+    }
+  
+    nav .icon-burger {
+      right: 3vw;
+    }
+  
+
+  /*-----------------------------------------------------------------------*/
+  /* DESKTOP 576  - SECTION-SHOWCASE */
+  /*-----------------------------------------------------------------------*/
+
+  /* increase font size for h2 showcase */
+  #showcase h2 {
+    font-size: 3.3rem;
+  }
+
+  /* increase font size for h4 showcase */
+  #showcase h4 {
+    font-size: 1.7rem;
+  }
+
+  .bg-image {
+    /* increase the padding for left and right */
+    padding: 0 3vw;
+  }
+
+
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 576  - section-a / OUR PROJECTS  */
+    /*-----------------------------------------------------------------------*/
+  
+    #section-a {
+      padding: 10rem 3vw;
+    }
+
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 576 - FOOTER */
+    /*-----------------------------------------------------------------------*/
+  
+    .footer-content {
+      padding: 0 3vw;
+    }
+  }
+  
+  /*---------------------------DESKTOP-700 VIEW----------------------------*/
+  @media (min-width: 700px) {
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 700  - NAV-PADDING*/
+    /*-----------------------------------------------------------------------*/
+  
+    nav {
+      padding: 0 3vw;
+    }
+  
+    nav .icon-burger {
+      right: 3vw;
+    }
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 700  - SECTION-SHOWCASE */
+    /*-----------------------------------------------------------------------*/
+  
+    .bg-image {
+      padding: 0 3vw;
+    }
+  
+ 
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 700  - section-a / OUR PROJECTS */
+    /*-----------------------------------------------------------------------*/
+    #section-a {
+      padding: 10rem 3vw;
+      
+    }
+  
+    .cards {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(1, minmax(230px, 1fr));
+    }
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 700 - FOOTER */
+    /*-----------------------------------------------------------------------*/
+  
+    .footer-content {
+       padding: 0 3vw;
+    }
+  
+    /* create a grid */
+    footer .content-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 3%;
+    }
+  }
+  
+  /*------------------------------DESKTOP-991 VIEW-------------------------*/
+  @media (min-width: 991px) {
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 991  - NAV-PADDING*/
+    /*-----------------------------------------------------------------------*/
+  
+    nav {
+      padding: 0 3vw;
+    }
+  
+    /*-----------------------------------------------------------------------*/
+    /* NAV BUTTON 991 */
+    /*-----------------------------------------------------------------------*/
+  
+    #iconlink {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 3.2rem;
+      height: 65%;
+      width: 270px;
+      padding: 1.6rem 0;
+      gap: 1.9rem;
+      background-color: var(--blue-color);
+    }
+  
+    #left {
+      color: var(--white-color);
+      font-size: 1.9rem;
+      font-family: "Courier New", Courier, monospace;
+    }
+  
+    #right a {
+      color: var(--white-color);
+      font-size: 2.8rem;
+      padding: 0;
+    }
+  
+    #right:hover {
+      -webkit-animation: wiggle 0.05s alternate ease infinite;
+      animation: wiggle 0.05s alternate ease infinite;
+      cursor: pointer;
+    }
+  
+    @keyframes wiggle {
+      0% {
+        transform: translate(0);
+      }
+  
+      10% {
+        transform: translate(-2px, -2px);
+      }
+  
+      20% {
+        transform: translate(2px, -2px);
+      }
+  
+      30% {
+        transform: translate(-2px, 2px);
+      }
+  
+      40% {
+        transform: translate(2px, 2px);
+      }
+  
+      50% {
+        transform: translate(-2px, -2px);
+      }
+  
+      60% {
+        transform: translate(2px, -2px);
+      }
+  
+      70% {
+        transform: translate(-2px, 2px);
+      }
+  
+      80% {
+        transform: translate(-2px, -2px);
+      }
+  
+      90% {
+        transform: translate(2px, -2px);
+      }
+  
+      100% {
+        transform: translate(0);
+      }
+    }
+
+  /*-----------------------------------------------------------------------*/
+  /* DESKTOP 991  - SECTION-SHOWCASE */
+  /*-----------------------------------------------------------------------*/
+  .bg-image {
+    /* decrease the padding for left and right */
+    padding: 0 3vw;
+  }
+  /* show card */
+  #showcase .showcase-card {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white-color);
+    padding: 1.6rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+
+  #showcase .showcase-card p {
+    font-size: 1.4rem;
+    font-family: sans-serif;
+  }
+
+  #showcase h2 {
+    font-size: 3.5rem;
+  }
+
+  #showcase h4 {
+    font-size: 2rem;
+  }
+
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 991  - section-a / OUR PROJECTS */
+    /*-----------------------------------------------------------------------*/
+  
+    #section-a {
+      padding: 10rem 3vw;
+    }
+  
+    /* create 3 columns grid */
+    .cards {
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+
+ 
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 991  - SECTION-FOOTER */
+    /*-----------------------------------------------------------------------*/
+  
+    .footer-content {
+      /* decrease the padding for left and right */
+      padding: 0 3vw;
+    }
+  
+    footer .content-wrap {
+      /* create 4 columns grid */
+      grid-template-columns: repeat(4, 1fr);
+    }
+  
+    footer .col-2,
+    .col-3,
+    .col-4 {
+      justify-self: end;
+    }
+  }
+  
+  /*------------------------------DESKTOP-1200 VIEW------------------------*/
+  @media (min-width: 1200px) {
+    
+  /*-----------------------------------------------------------------------*/
+  /* DESKTOP 1200  - SECTION-SHOWCASE */
+  /*-----------------------------------------------------------------------*/
+
+  /* full height showcase image */
+  #showcase {
+    height: 37vh;
+  }
+
+  /* increase the showcase h2 size */
+  #showcase h2 {
+    font-size: 4.5rem;
+  }
+
+  /* increase the showcase h4 size */
+  #showcase h4 {
+    font-size: 2.5rem;
+  }
+
+  #showcase .showcase-card p {
+    font-size: 1.6rem;
+  }
+
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1200  - section-a / OUR PROJECTS */
+    /*-----------------------------------------------------------------------*/
+  
+    #section-a {
+      padding: 10rem 3vw;
+    }
+  }
+  
+  /*----------------------------DESKTOP-1400 VIEW--------------------------*/
+  @media (min-width: 1400px) {
+  
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1400  - NAV-PADDING*/
+    /*-----------------------------------------------------------------------*/
+  
+    nav {
+      padding: 0 var(--widthD);
+    }
+  
+  /*----------------------------------------------------------------------*/
+  /* DESKTOP 1400  - SECTION-SHOWCASE */
+  /*----------------------------------------------------------------------*/
+  .bg-image {
+    /* increase the padding for left and right */
+    padding: 0 var(--widthD);
+  }
+
+  #showcase .showcase-card p {
+    font-size: 1.7rem;
+  }
+
+  #showcase h2 {
+    font-size: 5.5rem;
+  }
+
+  #showcase h4 {
+    font-size: 3rem;
+  }
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1400  - section-a / OUR PROJECTS*/
+    /*-----------------------------------------------------------------------*/
+  
+    #section-a {
+      /* increase the padding for left and right */
+      padding: 10rem var(--widthD) ;
+    }
+    
+    .cards {
+      gap: 2rem;
+    }
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1400  - SECTION-FOOTER */
+    /*-----------------------------------------------------------------------*/
+  
+    .footer-content {
+      /* increase the padding for left and right */
+      padding: 0 var(--widthD);
+    }
+  }
+  
+  /*----------------------------DESKTOP-1921 VIEW--------------------------*/
+  
+  @media (min-width: 1921px) {
+  
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1921  - NAV-PADDING*/
+    /*-----------------------------------------------------------------------*/
+  
+    nav {
+      padding: 0 var(--widthD);
+    }
+  
+  /*-----------------------------------------------------------------------*/
+  /* DESKTOP 1921  - SECTION-SHOWCASE */
+  /*-----------------------------------------------------------------------*/
+  .bg-image {
+    /* increase the padding for left and right */
+    padding: 0 var(--widthD);
+  }
+
+  #showcase h4 {
+    font-size: 3rem;
+  }
+
+  #showcase h2 {
+    font-size: 7rem;
+  }
+
+  #showcase .showcase-card p {
+    font-size: 1.9rem;
+  }
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1921  - section-a / OUR PROJECTS */
+    /*-----------------------------------------------------------------------*/
+  
+    #section-a {
+      padding: 10rem var(--widthD);
+    }
+    .cards {
+      gap: 3rem;
+    }
+
+    /*-----------------------------------------------------------------------*/
+    /* DESKTOP 1921  - SECTION-FOOTER */
+    /*-----------------------------------------------------------------------*/
+  
+    .footer-content {
+      /* increase the padding for left and right */
+      padding: 0 var(--widthD);
+    }
+  }
