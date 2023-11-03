@@ -163,7 +163,7 @@ nav .links a {
 nav .icon-burger {
   display: none;
   position: absolute;
-  right: 5%;
+  right: 3vw;
   top: 50%;
   transform: translateY(-50%);
 }
