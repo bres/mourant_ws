@@ -1,13 +1,13 @@
 
 :root {
 
-  --blue-color: #106ce6;
+  --blue-color: #19567e;
   --p-color: #7e7e7e;
   --h2-color: #3f3f3f;
   --h3-color: #3f3f3f;
   --h4-color: var(--blue-color);
-  --button-hover-color: #0f65d6;
-  --line-color: #1276f8;
+  --button-hover-color: #154b6e;
+  --line-color: #1b5f8d;
   --quote_line-color: #e0e0e0;
   --gray-background-color: #f8f8f8;
   --white-color: #fff;

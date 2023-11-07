@@ -29,8 +29,8 @@
 #showcase .bg-image {
   position: absolute;
   background: linear-gradient(rgba(0, 0, 0, 0.116), rgba(0, 0, 0, 0.2)),
-    url("https://images.unsplash.com/photo-1542512766-5de0463dc1cc?auto=format&fit=crop&q=80&w=2669&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-  background-position: bottom;
+    url("https://images.unsplash.com/photo-1545958140-244047d78f3a?q=80&w=2694&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -91,10 +91,10 @@
   display: grid;
   grid-template-columns: 1fr;
 }
-
-
 #section-a .card-content {
   text-align: start;
+  display:grid;
+  grid-template-rows: 2fr;
 }
 
 /* the nested grid */
@@ -719,7 +719,7 @@
   /* the nested grid */
   #section-a .card-content ul {
     /* create a margin-top from paragraph text */
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
