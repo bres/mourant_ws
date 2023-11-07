@@ -1,0 +1,99 @@
+
+:root {
+
+  --blue-color: #106ce6;
+  --p-color: #7e7e7e;
+  --h2-color: #3f3f3f;
+  --h3-color: #3f3f3f;
+  --h4-color: var(--blue-color);
+  --button-hover-color: #0f65d6;
+  --line-color: #1276f8;
+  --quote_line-color: #e0e0e0;
+  --gray-background-color: #f8f8f8;
+  --white-color: #fff;
+
+  /*-----------------------------------------------------------------------*/
+  /* Core Padding*/
+  /*-----------------------------------------------------------------------*/
+  --widthA: 1rem;
+  --widthB: calc(100% - 1400px);
+  --widthC: calc(var(--widthB) / 2.08);
+  --widthD: calc(3% + var(--widthC));
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+/*-----------------------------------------------------------------------*/
+/* Core Styles */
+/*-----------------------------------------------------------------------*/
+body {
+  font-family: "Cabin", sans-serif;
+  background-color: var(--gray-background-color);
+  font-size: 1.6rem;
+  line-height: 1.7;
+  text-align: center;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.3;
+  letter-spacing: 0.08rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+  margin: 0;
+  padding: 0 0 3.5rem 0;
+  color: var(--h2-color);
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0;
+  padding: 0 0 0.5rem 0;
+  color: var(--h3-color);
+}
+
+h4 {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 3rem 0 0 0;
+  color: var(--h4-color);
+}
+
+p {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  color: var(--p-color);
+}
+
+ul i {
+  color: var(--blue-color);
+}
+
+.container {
+  position: relative;
+  margin-top: 80px;
+}
+
+img {
+  padding: 0;
+}
